@@ -14,8 +14,11 @@ export class Service{
         this.bucket = new Storage(this.client);
     }
 
-    async createPost({title, slug, content, featuredImage, status, userId}){
+    async createPost({title, slug, content, featuredImage, status, userId, userEmail}){
         try {
+            console.log('AppwriteService.createPost called with:', {
+                title, slug, content, featuredImage, status, userId, userEmail
+            });
             return await this.databases.createDocument(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
@@ -26,6 +29,7 @@ export class Service{
                     featuredImage,
                     status,
                     userId,
+                    userEmail,
                 }
             )
         } catch (error) {
@@ -124,12 +128,10 @@ export class Service{
         }
     }
 
-    getFilePreview(fileId){
-        return this.bucket.getFilePreview(
-            conf.appwriteBucketId,
-            fileId
-        )
-    }
+    getFileUrl(fileId) {
+    return this.bucket.getFileView(conf.appwriteBucketId, fileId);
+  }
+
 }
 
 

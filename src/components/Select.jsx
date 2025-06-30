@@ -9,7 +9,7 @@ function Select({
     const id=useId()
   return (
     <div className='w-full'>{label && <label htmlFor={id} className=''></label>}
-    <Select
+    <select
     {...props}
     id={id}
     ref={ref}
@@ -20,7 +20,7 @@ function Select({
                 {option}
             </option>
         ))}
-    </Select></div>
+    </select></div>
   )
 }
 

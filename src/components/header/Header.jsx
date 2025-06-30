@@ -25,7 +25,7 @@ function Header() {
       active: !authStatus,
   },
   {
-      name: "All Posts",
+      name: "My Posts",
       slug: "/all-posts",
       active: authStatus,
   },
@@ -38,13 +38,12 @@ function Header() {
 
 
   return (
-    <header className='py-3 shadow bg-gray-500'>
+    <header className='py-3 shadow' style={{background: '#328e6e'}}>
       <Container>
         <nav className='flex'>
           <div className='mr-4'>
             <Link to='/'>
-              <Logo width='70px'   />
-
+              <Logo width='60px'   />
               </Link>
           </div>
           <ul className='flex ml-auto'>
@@ -53,7 +52,10 @@ function Header() {
               <li key={item.name}>
                 <button
                 onClick={() => navigate(item.slug)}
-                className='inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'
+                className='inline-block px-6 py-2 duration-200 rounded-full font-semibold'
+                style={{background: 'transparent', color: '#fff', border: '2px solid #90c67c', marginLeft: '0.5rem'}}
+                onMouseOver={e => {e.target.style.background='#90c67c'; e.target.style.color='#328e6e';}}
+                onMouseOut={e => {e.target.style.background='transparent'; e.target.style.color='#fff';}}
                 >{item.name}</button>
               </li>
             ) : null

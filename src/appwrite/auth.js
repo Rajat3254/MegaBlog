@@ -16,7 +16,7 @@ export class AuthService {
 
     async createAccount({email, password, name}) {
         try {
-            const userAccount = await this.account.create(crypto.randomUUID(), email, password, name);
+            const userAccount = await this.account.create(ID.unique(), email, password, name);
             if (userAccount) {
                 // call another method
                 return this.login({email, password});
@@ -30,8 +30,7 @@ export class AuthService {
 
     async login({email, password}) {
         try {
-            console.log("Generated userId:", crypto.randomUUID());
-            return await this.account.createSession(email, password);
+            return await this.account.createEmailPasswordSession(email, password);
         } catch (error) {
             throw error;
         }
