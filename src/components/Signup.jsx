@@ -32,7 +32,7 @@ function Signup() {
 
   return (
     <div className="flex items-center justify-center" style={{background: '#e1eebc', minHeight: '100vh'}}>
-            <div className={`mx-auto w-full max-w-sm sm:max-w-lg rounded-xl p-10 border px-4 sm:px-10`} style={{background: '#fff', borderColor: '#328e6e'}}>
+            <div className={`mx-auto w-full max-w-xs sm:max-w-lg rounded-xl p-10 border px-4 sm:px-10`} style={{background: '#fff', borderColor: '#328e6e'}}>
             <div className="mb-2 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
                         <Logo width="100%" />

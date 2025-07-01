@@ -39,7 +39,7 @@ function Home() {
     if (!authStatus) {
         return (
             <div className="w-full flex justify-center items-center min-h-[60vh]" style={{background: 'linear-gradient(135deg, #e1eebc 60%, #90c67c 100%)'}}>
-                <div className="max-w-md w-full bg-white rounded-2xl shadow-2xl border p-10 flex flex-col items-center" style={{borderColor: '#67ae6e'}}>
+                <div className="max-w-xs sm:max-w-md w-full bg-white rounded-2xl shadow-2xl border p-10 flex flex-col items-center my-8 sm:my-0" style={{borderColor: '#67ae6e'}}>
                     <div className="mb-6">
                         {/* Lock/Community SVG */}
                         <svg width="72" height="72" fill="none" viewBox="0 0 48 48">
@@ -66,7 +66,7 @@ function Home() {
     if (loading) {
         return (
             <div className="w-full flex justify-center items-center min-h-[60vh]" style={{background: 'linear-gradient(135deg, #e1eebc 60%, #90c67c 100%)'}}>
-                <div className="max-w-md w-full bg-white rounded-2xl shadow-2xl border p-10 flex flex-col items-center" style={{borderColor: '#67ae6e'}}>
+                <div className="max-w-xs sm:max-w-md w-full bg-white rounded-2xl shadow-2xl border p-10 flex flex-col items-center my-8 sm:my-0" style={{borderColor: '#67ae6e'}}>
                     <div className="mb-6 flex space-x-2">
                         <span className="inline-block w-4 h-4 rounded-full" style={{background: '#328e6e', animation: 'bounce 1s infinite'}}></span>
                         <span className="inline-block w-4 h-4 rounded-full" style={{background: '#67ae6e', animation: 'bounce 1s 0.2s infinite'}}></span>
