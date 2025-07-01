@@ -163,9 +163,9 @@ function Home() {
                 {recentPosts.length > 0 && (
                   <>
                     <h3 className="text-xl font-bold mb-4 text-teal-700">{showAllRecent ? 'All Posts' : 'Recent Posts'}</h3>
-                    <div className='flex flex-wrap rounded-xl p-4 mb-8' style={{background: '#fff', border: '2px solid #67ae6e'}}>
+                    <div className='grid grid-cols-1 sm:flex sm:flex-wrap rounded-xl p-4 mb-8' style={{background: '#fff', border: '2px solid #67ae6e'}}>
                         {(showAllRecent ? recentPosts : recentPosts.slice(0, 4)).map((post) => (
-                            <div key={post.$id} className='p-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4'>
+                            <div key={post.$id} className='mb-4 sm:mb-0 sm:p-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4'>
                                 <PostCard {...post} excerpt={decodeHtmlEntities(post.content.replace(/<[^>]+>/g, '')).slice(0, 120)} />
                             </div>
                         ))}
